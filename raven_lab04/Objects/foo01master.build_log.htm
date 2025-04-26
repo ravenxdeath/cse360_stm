@@ -1,0 +1,168 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: rr rr, rt, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\raven_lab04\foo01master.uvprojx
+Project File Date:  04/26/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f446xx.s...
+RTE/Device/STM32F446RETx/system_stm32f4xx.c(263): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  263 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+1 warning generated.
+compiling system_stm32f4xx.c...
+spi.c(2): warning: no previous prototype for function 'TimerInit' [-Wmissing-prototypes]
+    2 | void TimerInit(void)
+      |      ^
+spi.c(2): note: declare 'static' if the function is not intended to be used outside of this translation unit
+    2 | void TimerInit(void)
+      | ^
+      | static 
+spi.c(25): warning: no previous prototype for function 'DelayUS' [-Wmissing-prototypes]
+   25 | void DelayUS(uint16_t delay)
+      |      ^
+spi.c(25): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   25 | void DelayUS(uint16_t delay)
+      | ^
+      | static 
+spi.c(36): warning: no previous prototype for function 'DelayMS' [-Wmissing-prototypes]
+   36 | void DelayMS(uint16_t delay)
+      |      ^
+spi.c(36): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   36 | void DelayMS(uint16_t delay)
+      | ^
+      | static 
+spi.c(45): warning: no previous prototype for function 'CS_E' [-Wmissing-prototypes]
+   45 | void CS_E(void)
+      |      ^
+spi.c(45): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   45 | void CS_E(void)
+      | ^
+      | static 
+spi.c(50): warning: no previous prototype for function 'CS_D' [-Wmissing-prototypes]
+   50 | void CS_D(void)
+      |      ^
+spi.c(50): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   50 | void CS_D(void)
+      | ^
+      | static 
+spi.c(55): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   55 | void SPI_GPIOInit()
+      |                  ^
+      |                   void
+spi.c(55): warning: no previous prototype for function 'SPI_GPIOInit' [-Wmissing-prototypes]
+   55 | void SPI_GPIOInit()
+      |      ^
+spi.c(55): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   55 | void SPI_GPIOInit()
+      | ^
+      | static 
+spi.c(79): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   79 |     SPI1->CR1 &= ~(1 << 6); // Disabling SPI1
+      |               ~~ ^~~~~~~~~
+spi.c(81): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   81 |     SPI1->CR1 &= ~(1 << 0 | 1 << 1); // CPOL = 0, CPHA = 0
+      |               ~~ ^~~~~~~~~~~~~~~~~~
+spi.c(87): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   87 |     SPI1->CR1 &= ~(1 << 7); // LSBFIRST = 0, MSB first
+      |               ~~ ^~~~~~~~~
+spi.c(91): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   91 |     SPI1->CR1 &= ~(1 << 10); // RXONLY = 0, full-duplex
+      |               ~~ ^~~~~~~~~~
+spi.c(93): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   93 |     SPI1->CR1 &= ~(1 << 11); // DFF=0, 8 bit data
+      |               ~~ ^~~~~~~~~~
+spi.c(69): warning: no previous prototype for function 'SPI_Config' [-Wmissing-prototypes]
+   69 | void SPI_Config(void)
+      |      ^
+spi.c(69): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   69 | void SPI_Config(void)
+      | ^
+      | static 
+spi.c(115): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  115 |         }; // wait for TXE bit to set -> This will indicate that the buffer is empty
+      |          ^
+spi.c(127): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  127 |     }; // wait for BSY bit to Reset -> This will indicate that SPI is not busy in communication
+      |      ^
+spi.c(100): warning: no previous prototype for function 'SPI_Transmit' [-Wmissing-prototypes]
+  100 | void SPI_Transmit(uint8_t *data, int size)
+      |      ^
+spi.c(100): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  100 | void SPI_Transmit(uint8_t *data, int size)
+      | ^
+      | static 
+spi.c(130): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  130 | int main()
+      |         ^
+      |          void
+spi.c(145): warning: no newline at end of file [-Wnewline-eof]
+  145 | }
+      |  ^
+spi.c(136): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  136 |     uint8_t buffer[] = "Hello Arduino It's STM32!\n";
+      |             ^
+spi.c(116): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  116 |         SPI1->DR = data[i]; // load the data into the Data Register
+      |                    ^~~~
+20 warnings generated.
+compiling spi.c...
+linking...
+Program Size: Code=1204 RO-data=496 RW-data=0 ZI-data=1632  
+".\Objects\foo01master.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil::STM32F4xx_DFP@2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Administrator/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Users/Administrator/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+
+   * Component: Keil::Device:Startup@2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F446xx_OPT.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
